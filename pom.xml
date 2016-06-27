@@ -1,42 +1,48 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>hu.gyak.epam</groupId>
-  <artifactId>helloworldservlet</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>helloworldservlet Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>hu.gyak.epam</groupId>
+    <artifactId>helloworldservlet</artifactId>
+    <packaging>war</packaging>
 
-      <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlet -->
-      <dependency>
-          <groupId>org.eclipse.jetty</groupId>
-          <artifactId>jetty-servlet</artifactId>
-          <version>9.4.0.M0</version>
-      </dependency>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+    </properties>
 
-  </dependencies>
-  <build>
-    <finalName>helloworldservlet</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <version>9.2.11.v20150529</version>
-          <configuration>
-              <httpConnector>
-                  <!-- egyeni port mivel egy meglevo alkalmazas blokkolta a default 8080 portot -->
-                  <port>9898</port>
-              </httpConnector>
-          </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <version>1.0-SNAPSHOT</version>
+    <name>helloworldservlet Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlet -->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>9.4.0.M0</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>helloworldservlet</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.11.v20150529</version>
+                <configuration>
+                    <httpConnector>
+                        <!-- egyeni port mivel egy meglevo alkalmazas blokkolta a default 8080 portot -->
+                        <port>9898</port>
+                    </httpConnector>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
