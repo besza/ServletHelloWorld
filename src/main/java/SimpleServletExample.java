@@ -12,10 +12,7 @@ public class SimpleServletExample extends HttpServlet {
         res.setCharacterEncoding("UTF-8");
 
         PrintWriter pw = res.getWriter();
-        pw.print("Hello world árvíztűrő tükörfúrógép!");
+        pw.print("Helló világ!" + req.getParameter("name"));
     }
 
-    public void handleRequest(HttpServletRequest req, HttpServlet res) {
-
-    }
 }
