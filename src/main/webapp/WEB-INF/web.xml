@@ -2,6 +2,7 @@
     <servlet>
         <servlet-name>SimpleServletExample</servlet-name>
         <servlet-class>SimpleServletExample</servlet-class>
+
         <init-param>
             <param-name>number</param-name>
             <param-value>5</param-value>

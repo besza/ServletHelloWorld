@@ -14,6 +14,7 @@
     <name>helloworldservlet Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -26,6 +27,13 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
             <version>9.4.0.M0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.7.5</version>
         </dependency>
 
     </dependencies>
