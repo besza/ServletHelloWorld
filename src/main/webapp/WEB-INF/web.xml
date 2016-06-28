@@ -2,10 +2,16 @@
     <servlet>
         <servlet-name>SimpleServletExample</servlet-name>
         <servlet-class>SimpleServletExample</servlet-class>
+        <init-param>
+            <param-name>number</param-name>
+            <param-value>5</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>SimpleServletExample</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+
+
 </web-app>
