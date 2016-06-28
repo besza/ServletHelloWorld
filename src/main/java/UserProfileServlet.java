@@ -6,6 +6,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -15,13 +18,23 @@ public class UserProfileServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        resp.setContentType("application/json;charset=UTF-8");
+
+        HttpSession session = req.getSession();
+
+        PrintWriter writer = resp.getWriter();
+
+        if (session.getAttribute("user") != null) {
+            ObjectMapper mapper = new ObjectMapper();
+            String result = mapper.writeValueAsString(session.getAttribute("user"));
+            writer.print(result);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        resp.setContentType("application/json;charset=UTF-8");
+        resp.setContentType("text/plain;charset=UTF-8");
 
         PrintWriter writer = resp.getWriter();
 
@@ -33,6 +46,8 @@ public class UserProfileServlet extends HttpServlet{
         HttpSession session = req.getSession();
 
         session.setAttribute("user", profile);
+
+        writer.print("Success!");
     }
 
     @Override
