@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -6,7 +6,7 @@ import java.util.List;
  */
 public class UserProfile {
     private String name;
-    private LocalDate birthday;
+    private Date birthday;
     private int age;
     private double height;
     private List<String> emails;
@@ -19,11 +19,11 @@ public class UserProfile {
         this.name = name;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
@@ -60,5 +60,33 @@ public class UserProfile {
                 ", height=" + height +
                 ", emails=" + emails +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        UserProfile that = (UserProfile) o;
+
+        if (age != that.age) return false;
+        if (Double.compare(that.height, height) != 0) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (birthday != null ? !birthday.equals(that.birthday) : that.birthday != null) return false;
+        return emails != null ? emails.equals(that.emails) : that.emails == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        result = 31 * result + age;
+        temp = Double.doubleToLongBits(height);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (emails != null ? emails.hashCode() : 0);
+        return result;
     }
 }

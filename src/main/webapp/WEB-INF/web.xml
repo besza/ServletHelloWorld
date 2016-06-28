@@ -9,9 +9,20 @@
         </init-param>
     </servlet>
 
+    <servlet>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <servlet-class>UserProfileServlet</servlet-class>
+    </servlet>
+
+
     <servlet-mapping>
         <servlet-name>SimpleServletExample</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <url-pattern>/user</url-pattern>
     </servlet-mapping>
 
 
