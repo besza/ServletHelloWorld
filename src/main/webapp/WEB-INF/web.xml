@@ -25,5 +25,14 @@
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>TokenFilter</filter-name>
+        <filter-class>TokenFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>TokenFilter</filter-name>
+        <url-pattern>/user</url-pattern>
+    </filter-mapping>
 
 </web-app>
