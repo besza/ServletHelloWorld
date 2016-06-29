@@ -35,6 +35,8 @@ public class TokenFilter implements Filter {
                     res.sendError(401); //unauthorized
                     return;
                 }
+                //TODO: a filter csak olvassa ezt a TokenStorage-ot, a Listener pedig kezeli azt
+
             }
         } else if (req.getMethod().equals("POST")) {
             String createdToken = TokenStorage.getInstance().putToken(req.getSession().getId());
